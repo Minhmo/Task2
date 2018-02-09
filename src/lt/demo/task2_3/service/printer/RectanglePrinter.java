@@ -1,8 +1,11 @@
 package lt.demo.task2_3.service.printer;
 
+/**
+ * Class, that is responsible for printing a rectangle from two dimensional array.
+ * Extends console printer.
+ */
 public class RectanglePrinter extends ConsolePrinter {
-    public static final char WHITE_SPACE = ' ';
-    public static final char THIN_SPACE = 0x2006;
+    private static final char THIN_SPACE = 0x2006;
 
     private boolean putWhitespaceBetweenChars = true;
 
@@ -42,7 +45,7 @@ public class RectanglePrinter extends ConsolePrinter {
     /**
      * Some consoles, or terminals introduce a little bit of space between vertical dashes,
      * in order to compensate that, one could use spaces between
-     * @param putWhitespaceBetweenChars
+     * @param putWhitespaceBetweenChars flag
      */
     public void setPutWhitespaceBetweenChars(boolean putWhitespaceBetweenChars) {
         this.putWhitespaceBetweenChars = putWhitespaceBetweenChars;

@@ -14,7 +14,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Class<?>[] classes = TestBase.class.getClasses();
         List<TestBase> tests = Arrays.asList(new TreeTests(), new DuplicatesTests());
 
         for (TestBase test : tests) {
