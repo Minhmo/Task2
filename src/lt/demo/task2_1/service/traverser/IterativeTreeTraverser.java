@@ -1,7 +1,6 @@
 package lt.demo.task2_1.service.traverser;
 
 import lt.demo.task2_1.model.Node;
-import lt.demo.task2_1.service.def.Formatter;
 import lt.demo.task2_1.service.def.Printer;
 import lt.demo.task2_1.service.def.TreeTraverser;
 
@@ -12,11 +11,11 @@ import java.util.*;
  */
 public class IterativeTreeTraverser implements TreeTraverser {
     private Printer printer;
-    private Formatter treeFormatter;
+    private lt.demo.task2_1.service.def.Formatter treeFormatter;
 
     private boolean printOutput = true;
 
-    public IterativeTreeTraverser(Printer printer, Formatter treeFormatter) {
+    public IterativeTreeTraverser(Printer printer, lt.demo.task2_1.service.def.Formatter treeFormatter) {
         this.printer = printer;
         this.treeFormatter = treeFormatter;
 

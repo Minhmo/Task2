@@ -11,7 +11,6 @@ import lt.demo.task2_1.service.traverser.RecursiveTreeTraverser;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 
 public class TreeTests extends TestBase {
 

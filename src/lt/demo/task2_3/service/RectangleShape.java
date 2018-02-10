@@ -1,23 +1,30 @@
 package lt.demo.task2_3.service;
 
+/**
+ * Class, that is responsible for constructing a printable rectangle array of desired width and height.
+ */
 public class RectangleShape {
-    // char's of unicode vertices.
+    // Unicode values of required symbols.
     private static final char SQUARE = 0x25FB;
 
-    private static final char VERTICAL_BOX = 0x2758;
-    private static final char HORIZONTAL_BOX = 0x2500;
+    private static final char VERTICAL_BOX_LINE = 0x2758;
+    private static final char HORIZONTAL_BOX_LINE = 0x2500;
     private static final char TOP_LEFT_VERTEX = 0x250C;
     private static final char BOTTOM_LEFT_VERTEX = 0x2514;
     private static final char TOP_RIGHT_VERTEX = 0x2510;
     private static final char BOTTOM_RIGHT_VERTEX = 0x2518;
 
-    public static final char LEFT_BOX_LINE = 0x23B8;
-    public static final char RIGHT_BOX_LINE = 0x23B9;
+    private static final char RIGHT_BOX_LINE = 0x23B9;
 
-    public static final char UNDERSCORE = 0x005F;
-    public static final char UPPERSCORE = 0x203E;
+    private static final char UNDERSCORE = 0x005F;
+    private static final char UPPERSCORE = 0x203E;
 
-
+    /**
+     * Method, that constructs a printable char array to represent a rectangle of desired width and height.
+     * @param length
+     * @param width
+     * @return
+     */
     public char[][] getPrintableArray(int length, int width) {
         // handling special cases.
         if (length == 0 || width == 0) {
@@ -33,15 +40,22 @@ public class RectangleShape {
         } else if (width == 1 && length != 1) {
             return fillArrayWidthEqOne(length);
         }
+
+        // regular case
         return fillArray(length, width);
     }
 
+    /**
+     * Special case, when rectangle width is equal to 1.
+     * @param length of a rectangle
+     * @return array, that represents rectangle.
+     */
     private char [][] fillArrayWidthEqOne(int length) {
         length = length + 2;
         char [][] rectangle = new char[2][length];
 
-        rectangle[1][0] = VERTICAL_BOX;
-        rectangle[1][length - 1] = VERTICAL_BOX;
+        rectangle[1][0] = VERTICAL_BOX_LINE;
+        rectangle[1][length - 1] = VERTICAL_BOX_LINE;
 
         for (int i = 1; i < length - 1; i++) {
             rectangle[0][i] = UNDERSCORE;
@@ -51,6 +65,11 @@ public class RectangleShape {
         return rectangle;
     }
 
+    /**
+     * Special case, when length equals to 1.
+     * @param width of a rectangle
+     * @return array, that represents rectangle.
+     */
     private char [][] fillArrayLengthEqOne(int width) {
         width = width + 2;
         char [][] rectangle = new char[width][2];
@@ -66,6 +85,12 @@ public class RectangleShape {
         return rectangle;
     }
 
+    /**
+     * Fills array to represent a rectangle, which width and height is more than 1.
+     * @param length of a rectangle
+     * @param width of a rectangle
+     * @return array, that represents rectangle.
+     */
     private char [][] fillArray(int length, int width) {
         length --;
         width--;
@@ -87,12 +112,14 @@ public class RectangleShape {
         return rectangle;
     }
 
+    // Utility functions.
+
     private char getEdgeSymbol(int i, int j, int width, int height) {
         if (i == 0 || i == height) {
-            return HORIZONTAL_BOX;
+            return HORIZONTAL_BOX_LINE;
         }
 
-        return VERTICAL_BOX;
+        return VERTICAL_BOX_LINE;
     }
 
     private boolean isEdge(int i, int j, int width, int height) {
