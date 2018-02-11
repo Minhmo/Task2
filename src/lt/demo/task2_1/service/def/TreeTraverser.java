@@ -6,5 +6,4 @@ import java.util.Collection;
 
 public interface TreeTraverser {
     Collection<String> traverse(Node root);
-    void setPrintOutput(boolean printOutput);
 }

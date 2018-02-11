@@ -1,9 +1,11 @@
 package lt.demo.task2_3.service;
 
+import lt.demo.task2_3.service.def.RectangleShape;
+
 /**
  * Class, that is responsible for constructing a printable rectangle array of desired width and height.
  */
-public class RectangleShape {
+public class RectangleShapeImpl implements RectangleShape {
     // Unicode values of required symbols.
     private static final char SQUARE = 0x25FB;
 
@@ -25,6 +27,7 @@ public class RectangleShape {
      * @param width
      * @return
      */
+    @Override
     public char[][] getPrintableArray(int length, int width) {
         // handling special cases.
         if (length == 0 || width == 0) {

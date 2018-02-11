@@ -1,6 +1,7 @@
 package lt.demo.task2_3;
 
-import lt.demo.task2_3.service.RectangleShape;
+import lt.demo.task2_3.service.RectangleShapeImpl;
+import lt.demo.task2_3.service.def.RectangleShape;
 import lt.demo.task2_3.service.printer.RectanglePrinter;
 import lt.demo.task2_3.service.scaner.ConsoleScanner;
 
@@ -31,7 +32,7 @@ public class RectanglePrinterMain {
         rectanglePrinter.print("OK. So there is your rectangle:");
         rectanglePrinter.print(null);
 
-        RectangleShape rectangleShape = new RectangleShape();
+        RectangleShape rectangleShape = new RectangleShapeImpl();
         char[][] printableArray = rectangleShape.getPrintableArray(length, width);
 
         rectanglePrinter.printRectangle(printableArray);

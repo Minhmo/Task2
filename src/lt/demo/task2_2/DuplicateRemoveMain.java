@@ -2,6 +2,7 @@ package lt.demo.task2_2;
 
 import lt.demo.task2_2.service.QuickSortDuplicateRemover;
 import lt.demo.task2_2.service.RadixSortDuplicateRemover;
+import lt.demo.task2_2.service.def.DuplicateRemover;
 import lt.demo.task2_2.service.def.Printer;
 import lt.demo.task2_2.service.printer.ConsolePrinter;
 
@@ -18,13 +19,12 @@ import java.util.Random;
 public class DuplicateRemoveMain {
 
     public static void main(String[] args) {
-        RadixSortDuplicateRemover radixSortDuplicateRemover = new RadixSortDuplicateRemover();
-        QuickSortDuplicateRemover quickSortDuplicateRemover = new QuickSortDuplicateRemover();
+        DuplicateRemover radixSortDuplicateRemover = new RadixSortDuplicateRemover();
+        DuplicateRemover quickSortDuplicateRemover = new QuickSortDuplicateRemover();
         Random random = new Random();
-
         Printer printer = new ConsolePrinter();
-        long start, end;
 
+        long start, end;
         int size = 100000000;
 
         int[] testArray = new int[size];
