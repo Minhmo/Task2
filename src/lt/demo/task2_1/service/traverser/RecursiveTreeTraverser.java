@@ -81,7 +81,6 @@ public class RecursiveTreeTraverser implements TreeTraverser {
         // any two vertices are connected by exactly one path.
         // In other words, any acyclic connected graph is a tree."
         if (visited.contains(root.getName())) {
-            // todo implement ex handler.
             throw new IllegalStateException("incorrect tree.");
         }
     }
